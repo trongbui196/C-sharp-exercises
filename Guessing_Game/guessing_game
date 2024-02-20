@@ -16,18 +16,18 @@ namespace ConsoleApp1
                 guess=Convert.ToInt32(Console.ReadLine());
                 if (guess > a)
                     {
-                        Console.WriteLine("doan so be hon");
+                        Console.WriteLine("Guess lower!");
                     }
                 else if (guess < a)
                     {
-                        Console.WriteLine("doan so lon hon");
+                        Console.WriteLine("Guess higher!");
                     }
             }
             while (a !=guess);
-            Console.WriteLine($"doan dung r, so la {a} ban doan {guess}");
-            Console.WriteLine("choi tiep khong Y/N");
+            Console.WriteLine($"Correct, the number was {a} and your guess is {guess}");
+            Console.WriteLine("Play Again? Y/N");
                 play = Console.ReadLine().ToUpper();
-                if (play == "N") { Console.WriteLine("thank bro"); }
+                if (play == "N") { Console.WriteLine("Bye bye"); }
             }
         }
     }
