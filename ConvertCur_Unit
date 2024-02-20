@@ -1,0 +1,109 @@
+using System;
+using System.Numerics;
+namespace ConsoleApp1
+{
+    public class convertApp
+    {
+        static void Main(string[] args) 
+        {
+            string again = "Y";
+            do {
+            Console.WriteLine("Welcome to convert app");
+            Console.WriteLine("-----------");
+            Console.WriteLine("Please choose: ");
+            Console.WriteLine("Type 1 for Currency convert");
+            Console.WriteLine("Type 2 for Unit convert");
+            int type = Convert.ToInt32(Console.ReadLine());
+            if (type == 2) { UnitConv(); }
+            else if (type == 1) {  CurConv(); }
+            Console.WriteLine("-----------");
+            Console.WriteLine("Reset? Y/N");
+            again=Console.ReadLine().ToUpper();
+            } while (again == "Y");
+        }
+        static void CurConv()
+        {
+            double a;
+            Console.WriteLine("-----------");
+            Console.WriteLine("Convert to VND: ");
+            Console.WriteLine("1.USD");//24500
+            Console.WriteLine("2.EUR");//26500
+            Console.WriteLine("3.GBP");//31000
+            Console.WriteLine("4.AUD");//16100
+            Console.WriteLine("5.CNY");//3410
+            int t=Convert.ToInt32(Console.ReadLine());
+            switch (t)
+            {
+                default: Console.WriteLine("Please choose between 1 - 5");break;
+                case 1:
+                    Console.WriteLine("Converting USD to VND");
+                    Console.WriteLine("Input USD");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} USD equal {1} VND",a,a*24500);break;
+                case 2:
+                    Console.WriteLine("Converting EUR to VND");
+                    Console.WriteLine("Input EUR");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} EUR equal {1} VND", a, a * 26500); break;
+                case 3:
+                    Console.WriteLine("Converting GBP to VND");
+                    Console.WriteLine("Input GBP");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} GBP equal {1} VND", a, a * 31000); break;
+                case 4:
+                    Console.WriteLine("Converting AUD to VND");
+                    Console.WriteLine("Input AUD ");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} AUD equal {1} VND", a, a * 16100); break;
+                case 5:
+                    Console.WriteLine("Converting CNY to VND");
+                    Console.WriteLine("Input CNY");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} CNY equal {1} VND", a, a * 3410); break;
+
+            }
+
+        }
+        static void UnitConv()
+        {   double a;
+            Console.WriteLine("-----------");
+            Console.WriteLine("Please choose: ");
+            Console.WriteLine("1.Kg to Pound");//2.2
+            Console.WriteLine("2.Km to Mile");//0,62
+            Console.WriteLine("3.Foot to Cm");//30.48
+            Console.WriteLine("4.Inch to Cm");//2.54
+            Console.WriteLine("5.Fahrenheit to Celsius");//f-32/1,8
+            int t=Convert.ToInt32(Console.ReadLine());
+            switch (t)
+            {
+                default: Console.WriteLine("Please choose between 1-5"); break;
+                case 1:
+                    Console.WriteLine("Converting Kg to Pound");
+                    Console.Write("Input Kg:");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} Kg equal to {1:f} Pound", a, a * 2.2); break;
+                case 2:
+                    Console.WriteLine("Converting Km to Mile");
+                    Console.Write("Input Km:");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} Km equal to {1:f} Mile", a, a * 0.62); break;
+                case 3:
+                    Console.WriteLine("Converting Foot to Cm");
+                    Console.Write("Input Foot:");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} Kg equal to {1:f} Pound", a, a * 30.48); break;
+                case 4:
+                    Console.WriteLine("Converting Inch to Cm");
+                    Console.Write("Input Inch:");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} Inch equal to {1:f} Cm", a, a * 2.54); break;
+                case 5:
+                    Console.WriteLine("Converting Fahrenheit to Celsius ");
+                    Console.Write("Input Fahrenheit:");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("{0} Fahrenheit equal to {1:f} Celsius ", a, (a - 32) / 1.8); break;
+            }
+        }
+    }
+}
+ 
