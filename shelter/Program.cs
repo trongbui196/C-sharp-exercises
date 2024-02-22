@@ -1,0 +1,45 @@
+﻿using System;
+using System.Numerics;
+namespace ConsoleApp1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int ab = rnd.Next(4, 10000);
+            int ba = rnd.Next(4, 10000);
+            animal shiba = new animal("bull", "woof");
+            shiba.speak();
+            animal cat = new animal("megatron", "meow");
+            cat.speak();
+            Console.WriteLine("number of animal: {0}", animal.numofAnimal);
+            Console.WriteLine("============");
+            Console.Write("what's your name: ");
+            string name = Console.ReadLine();
+            Console.Write("what's your pet name: ");
+            string a = Console.ReadLine();
+            Console.Write("pet sound: ");
+            string b = Console.ReadLine();
+            Console.Write("pet weight: ");
+            double wei = Convert.ToDouble(Console.ReadLine());
+            Console.Write("pet height: ");
+            double hei = Convert.ToDouble(Console.ReadLine());
+            Console.Write("pet age: ");
+            double age = Convert.ToDouble(Console.ReadLine());
+            animal pet = new animal(a, b);
+            pet.speak();
+            pet.setStat(wei, age, hei, name, ab);
+            shiba.setStat(66, 4, 55, "Selena", ba);
+            pet.getStat();
+            pet.ishealthy();
+            Console.WriteLine("=======");
+            shiba.getStat();
+            shiba.ishealthy();
+            dog dogg = new dog("rotwei", "woof", "meow");
+            animal dogg2 = new dog("leafdog", "howling", "whisper");
+            dogg.speak();
+            dogg2.speak();
+        }
+    }
+}
